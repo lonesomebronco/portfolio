@@ -138,3 +138,42 @@
 }
 
 
+
+
+/* October 2026: intentionally small additions; original theme, layout, and effects remain intact. */
+.page-progress-line{position:fixed;top:0;left:0;height:2px;width:100%;z-index:10001;pointer-events:none;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--color-light-blue),var(--color-purple),var(--color-light-purple));box-shadow:0 0 10px rgba(207,89,230,.4)}
+.work-box{cursor:pointer}
+.work-box:focus-visible{outline:2px solid var(--color-light-blue);outline-offset:4px}
+.work-box.current-role{border-color:var(--color-light-purple);box-shadow:0 0 0 1px rgba(207,89,230,.08),0 15px 42px rgba(128,0,255,.1)}
+.work-box.current-role .role{font-weight:700}
+.experience-hint{display:inline-block;margin:8px 0;color:var(--color-light-blue);font-family:'Fira Code',monospace;font-size:1.12rem;letter-spacing:.025em}
+.leadership-section-container{width:100%;display:flex;justify-content:center;padding:120px 0 80px;background-color:var(--color-dark-mode);scroll-margin-top:100px}
+.leadership-section{width:100%;max-width:1150px;display:flex;flex-direction:column;align-items:stretch}
+.leadership-section .section-heading{width:100%;display:flex;align-items:center;gap:10px;margin-bottom:35px}
+.leadership-intro{max-width:840px;margin-bottom:36px}
+.leadership-eyebrow{font-family:'Fira Code',monospace;font-size:1.2rem;letter-spacing:.12em;color:var(--color-light-blue);margin-bottom:17px}
+.leadership-intro h3{font-size:clamp(2.8rem,3vw,4.6rem);line-height:1.22;font-weight:700;color:var(--color-white);letter-spacing:-.035em;margin:0 0 19px}
+.leadership-gradient{background:linear-gradient(105deg,var(--color-light-blue),var(--color-light-purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.leadership-intro>p:last-child{font-size:1.75rem;color:var(--color-ddd-color);line-height:1.75;max-width:800px}
+.leadership-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.leadership-card{--spot-x:50%;--spot-y:0%;min-height:260px;display:flex;flex-direction:column;position:relative;isolation:isolate;overflow:hidden;padding:27px 25px 24px;background:linear-gradient(165deg,var(--tech-stack-box-first-color),var(--tech-stack-box-second-color));border:1px solid var(--tech-stack-box-border-color);border-radius:19px;transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .35s,box-shadow .35s}
+.leadership-card::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(310px circle at var(--spot-x) var(--spot-y),rgba(128,0,255,.14),transparent 70%);opacity:0;transition:opacity .35s}
+.leadership-card:hover{transform:translateY(-6px);border-color:rgba(207,89,230,.45);box-shadow:0 20px 55px rgba(0,0,0,.16)}
+.leadership-card:hover::before{opacity:1}
+.leadership-card-top{font:1.18rem 'Fira Code',monospace;letter-spacing:.06em;color:var(--color-light-blue);display:flex;justify-content:space-between;margin-bottom:36px}
+.leadership-card-top span:last-child{font-size:1.8rem;color:var(--color-light-purple);transition:transform .3s}
+.leadership-card:hover .leadership-card-top span:last-child{transform:translate(3px,-3px)}
+.leadership-card h4{color:var(--color-white);font-size:2.2rem;letter-spacing:-.02em;line-height:1.3;margin-bottom:13px}
+.leadership-card>p{font-size:1.48rem;line-height:1.7;color:var(--color-gray);margin-bottom:25px}
+.leadership-card-foot{margin-top:auto;border-top:1px solid var(--tech-stack-box-border-color);padding-top:15px;color:var(--color-light-purple);font:1.1rem 'Fira Code',monospace;letter-spacing:.025em}
+.leadership-note{margin:30px 0 0;font-size:1.5rem;color:var(--color-gray);line-height:1.8}
+.leadership-note strong{font-weight:600;color:var(--color-white)}
+@media(max-width:1200px){.leadership-section{width:100%}}
+@media(max-width:800px){.leadership-section-container{padding:85px 0 55px}.leadership-cards{grid-template-columns:1fr}.leadership-card{min-height:0;padding:25px}.leadership-card-top{margin-bottom:20px}.leadership-intro h3{font-size:3rem}.leadership-note{font-size:1.45rem}}
+@media(max-width:500px){.leadership-section{width:100%}.leadership-intro>p:last-child{font-size:1.65rem}.leadership-card{border-radius:16px}}
+@media(prefers-reduced-motion:reduce){.leadership-card,.leadership-card::before,.leadership-card-top span:last-child{transition:none!important}.leadership-card:hover{transform:none}.page-progress-line{box-shadow:none}}
+
+.leadership-proof{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.leadership-proof span{border:1px solid var(--tech-stack-box-border-color);border-radius:100px;padding:10px 15px;font-size:1.28rem;line-height:1.5;color:var(--color-gray);background:var(--tech-stack-box-first-color)}
+.leadership-proof strong{font-family:'Fira Code',monospace;font-weight:600;color:var(--color-light-blue)}
+@media(max-width:500px){.leadership-proof{gap:8px}.leadership-proof span{font-size:1.25rem;padding:9px 12px}}
