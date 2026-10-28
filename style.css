@@ -177,3 +177,174 @@
 .leadership-proof span{border:1px solid var(--tech-stack-box-border-color);border-radius:100px;padding:10px 15px;font-size:1.28rem;line-height:1.5;color:var(--color-gray);background:var(--tech-stack-box-first-color)}
 .leadership-proof strong{font-family:'Fira Code',monospace;font-weight:600;color:var(--color-light-blue)}
 @media(max-width:500px){.leadership-proof{gap:8px}.leadership-proof span{font-size:1.25rem;padding:9px 12px}}
+
+
+/* 2026 polish pass — extend the original black/purple/blue design, don't replace it. */
+html { scroll-behavior: smooth; }
+#home, #about, #skills, #workex, #leadership, #projects { scroll-margin-top: 112px; }
+
+/* A sixth item now fits comfortably into the same original pill navbar. */
+@media (min-width: 999px) {
+  .navbar { width: min(88%, 1320px); }
+  .navbar-tabs { flex: 1; width: auto; min-width: 0; }
+  .navbar-tabs-ul { justify-content: flex-end; gap: clamp(12px, 2.45vw, 43px); }
+  .navbar-tabs-ul li { flex-shrink: 0; font-size: clamp(1.16rem, 1.02vw, 1.5rem); }
+  .navbar-tabs-ul a { white-space: nowrap; }
+  .navbar-tabs-ul a:focus-visible { outline: 2px solid var(--color-light-blue); outline-offset: 7px; border-radius: 3px; }
+}
+
+/* Document-shaped, always-readable resume link; existing destination is untouched. */
+a.resume-btn.resume-link {
+  display: inline-flex; align-items: center; justify-content: space-between;
+  gap: 15px; margin-top: 29px; padding: 10px 16px 10px 12px;
+  min-height: 55px; height: auto; width: auto; max-width: 100%;
+  background: linear-gradient(110deg, rgba(128,0,255,.19), rgba(107,197,248,.075));
+  border: 1px solid rgba(207,89,230,.48); border-radius: 15px;
+  color: var(--color-white); text-decoration: none;
+  box-shadow: 0 6px 24px rgba(0,0,0,.14), inset 0 1px 0 rgba(255,255,255,.035);
+  transition: transform .32s cubic-bezier(.22,1,.36,1), border-color .32s, box-shadow .32s, background .32s;
+}
+a.resume-btn.resume-link:hover, a.resume-btn.resume-link:focus-visible {
+  transform: translateY(-3px); width: auto; border-radius: 15px;
+  border-color: rgba(107,197,248,.85);
+  background: linear-gradient(110deg, rgba(128,0,255,.30), rgba(107,197,248,.12));
+  box-shadow: 0 14px 36px rgba(128,0,255,.16), inset 0 1px 0 rgba(255,255,255,.085);
+}
+a.resume-btn.resume-link:focus-visible { outline: 2px solid var(--color-light-blue); outline-offset: 4px; }
+.resume-icon { width: 35px; height: 35px; display: inline-grid; place-items: center; flex-shrink: 0;
+  border-radius: 10px; background: linear-gradient(135deg, var(--color-light-blue), var(--color-light-purple)); color: #11111b; }
+.resume-icon svg { width: 20px; height: 20px; }
+.resume-label { font-size: 1.55rem; font-weight: 600; white-space: nowrap; letter-spacing: .012em; }
+.resume-arrow { width: 18px; height: 18px; color: var(--color-light-blue); flex-shrink: 0;
+  transition: transform .28s cubic-bezier(.22,1,.36,1); }
+.resume-link:hover .resume-arrow { transform: translateX(4px); }
+
+/* Experience: same alternating timeline, clearer cards and smoother details. */
+.work-section-intro { position: relative; z-index: 2; margin: -7px auto 41px;
+  width: min(82%, 730px); text-align: center; font-size: 1.55rem;
+  line-height: 1.75; color: var(--color-gray); background: var(--color-dark-mode); }
+.work-section-intro span { color: var(--color-light-blue); }
+.work-box {
+  --spot-x: 50%; --spot-y: 0%;
+  border: 1px solid var(--tech-stack-box-border-color); border-radius: 19px;
+  padding: 25px 28px 21px; overflow: hidden; isolation: isolate;
+  background: linear-gradient(147deg, rgba(207,89,230,.064), rgba(107,197,248,.016) 58%), var(--color-dark-mode);
+  box-shadow: 0 8px 25px rgba(0,0,0,.15);
+  transition: transform .38s cubic-bezier(.22,1,.36,1), border-color .35s, box-shadow .35s;
+}
+.work-box::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(350px circle at var(--spot-x) var(--spot-y), rgba(128,0,255,.17), transparent 68%);
+  opacity: 0; transition: opacity .35s; }
+.work-box:hover, .work-box:focus-visible, .work-box.clicked {
+  transform: translateY(-4px); border-color: rgba(207,89,230,.56);
+  box-shadow: 0 18px 45px rgba(0,0,0,.25), 0 0 28px rgba(128,0,255,.055);
+}
+.work-box:hover::before, .work-box.clicked::before, .work-box:focus-visible::before { opacity: 1; }
+.work-box.current-role { border-color: rgba(207,89,230,.60);
+  background: linear-gradient(139deg, rgba(128,0,255,.13), rgba(107,197,248,.035) 73%), var(--color-dark-mode); }
+.work-box.current-role .role { color: var(--color-white); }
+.experience-current-label { display: inline-flex; margin: 8px 0 12px;
+  font: 1.07rem 'Fira Code',monospace; letter-spacing: .04em; color: var(--color-light-blue); }
+.work-info .role { line-height: 1.27; margin-bottom: 11px; }
+.work-info .company { line-height: 1.45; }
+.work-info .duration { margin-bottom: 13px; }
+.experience-explore { display: inline-flex; align-items: center; gap: 5px; margin-top: 3px;
+  padding: 8px 12px; border: 1px solid rgba(207,89,230,.22); border-radius: 100px;
+  font: 1.11rem 'Fira Code',monospace; color: var(--color-light-blue);
+  background: rgba(128,0,255,.075); transition: border-color .3s, background .3s; }
+.experience-explore svg { width: 15px; height: 15px; transition: transform .35s cubic-bezier(.22,1,.36,1); }
+.work-box:hover .experience-explore, .work-box:focus-visible .experience-explore { border-color: rgba(107,197,248,.45); background: rgba(107,197,248,.075); }
+.work-box.clicked .experience-explore svg { transform: rotate(180deg); }
+.work-box .responsibilities, .work-box.clicked .responsibilities {
+  display: block !important; height: 0; margin: 0; opacity: 0; overflow: hidden;
+  transition: height .46s cubic-bezier(.22,1,.36,1), opacity .32s ease;
+}
+.work-box.clicked .responsibilities { opacity: 1; margin-top: 14px; }
+.work-box .responsibilities li { position: relative; padding-left: 16px; line-height: 1.55; }
+.work-box .responsibilities li::before { content: ''; position: absolute; left: 1px; top: 14px;
+  height: 5px; width: 5px; border-radius: 50%; background: var(--color-light-purple); }
+.work-box::after { display: none; } /* replaces thick legacy hover underline */
+
+/* Project cards: original image, typography and one-column sequence, refined. */
+.projects-intro { max-width: 720px; margin: -12px auto 23px; text-align: center;
+  font-size: 1.65rem; line-height: 1.7; color: var(--color-gray); }
+.project-boxes-div { gap: 25px; padding-top: 26px; }
+.project-box-wrapper { perspective: 1100px; }
+.project-box { --spot-x: 50%; --spot-y: 0%; position: relative; isolation: isolate;
+  background: linear-gradient(145deg, rgba(128,0,255,.075), rgba(107,197,248,.015) 60%), var(--color-dark-mode);
+  border: 1px solid var(--tech-stack-box-border-color); border-radius: 26px;
+  overflow: hidden; transform: translateY(0);
+  box-shadow: 0 12px 36px rgba(0,0,0,.13);
+  transition: transform .5s cubic-bezier(.22,1,.36,1), border-color .4s, box-shadow .4s;
+}
+.project-box::before { position: absolute; inset: 0; content: ''; pointer-events: none;
+  background: radial-gradient(520px circle at var(--spot-x) var(--spot-y), rgba(128,0,255,.16), transparent 70%);
+  opacity: 0; transition: opacity .4s; z-index: -1; }
+.project-box::after { position: absolute; left: 20%; right: 20%; bottom: 0; height: 2px;
+  content: ''; pointer-events: none; opacity: 0;
+  background: linear-gradient(90deg, transparent, var(--color-purple), var(--color-light-blue), transparent);
+  transition: opacity .4s; }
+.project-box:hover, .project-box:focus-within { transform: translateY(-5px);
+  border-color: rgba(207,89,230,.42); box-shadow: 0 24px 55px rgba(0,0,0,.25), 0 0 28px rgba(128,0,255,.075); }
+.project-box:hover::before, .project-box:hover::after, .project-box:focus-within::before, .project-box:focus-within::after { opacity: 1; }
+.project-box .info-div { gap: 13px; position: relative; z-index: 1; }
+.project-box .ProjectHeading { line-height: 1.13; letter-spacing: -.02em; }
+.project-box .ProjectDescription { line-height: 1.6; color: var(--color-gray); }
+.project-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; margin: 5px 0 2px; }
+.project-number { font: 1.08rem 'Fira Code',monospace; color: var(--color-light-blue); letter-spacing: .05em; }
+.project-category { padding: 6px 9px; border: 1px solid rgba(207,89,230,.3);
+  border-radius: 20px; font: 1.06rem 'Fira Code',monospace; color: var(--color-light-purple);
+  background: rgba(128,0,255,.07); }
+.project-box .image-div { position: relative; isolation: isolate; overflow: hidden; }
+.project-box .image-div::before { position: absolute; z-index: -1; inset: 10% 3% 0 5%; content: '';
+  background: radial-gradient(ellipse at 75% 60%, rgba(128,0,255,.2), transparent 65%); pointer-events: none; }
+.project-box .image-div img { transition: transform .7s cubic-bezier(.22,1,.36,1), filter .7s; }
+.project-box:hover .image-div img { transform: translateX(-6px) scale(1.025); filter: brightness(1.06); }
+.project-box .github-redirect { display: inline-flex; align-items: center; width: auto; gap: 10px;
+  padding: 9px 13px; border: 1px solid rgba(107,197,248,.3); border-radius: 30px;
+  background: rgba(107,197,248,.047); color: var(--color-white);
+  transition: background .3s, border-color .3s, transform .3s; }
+.project-box .github-redirect img { height: 21px; width: 21px; flex: 0 0 21px; }
+.project-cta-label { font: 1.18rem 'Fira Code',monospace; white-space: nowrap; }
+.project-cta-label span { color: var(--color-light-blue); display: inline-block; transition: transform .3s; }
+.project-box .github-redirect:hover, .project-box .github-redirect:focus-visible {
+  transform: translateY(-2px); border-color: var(--color-light-blue); background: rgba(107,197,248,.11); }
+.project-box .github-redirect:hover .project-cta-label span { transform: translate(2px,-2px); }
+.project-box .github-redirect:focus-visible { outline: 2px solid var(--color-light-blue); outline-offset: 3px; }
+
+/* Responsive improvements only where the additions need room. */
+@media (max-width: 998px) { .work-section-intro { width: 85%; } }
+@media (max-width: 768px) {
+  .projects-intro { margin: 0 auto 8px; width: 94%; font-size: 1.6rem; }
+  .project-boxes-div { gap: 26px; }
+  .project-box .info-div { gap: 11px; }
+  .project-meta { gap: 7px; }
+  .work-section-intro { margin-bottom: 28px; width: 92%; font-size: 1.52rem; }
+  .work-box { padding: 19px; border-radius: 16px; }
+}
+@media (max-width: 500px) {
+  a.resume-btn.resume-link { min-height: 51px; gap: 10px; }
+  .resume-label { font-size: 1.6rem; }
+  .project-box .github-redirect { padding: 9px 11px; }
+  .project-cta-label { font-size: 1.25rem; }
+  .work-section-intro { width: 90%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  a.resume-btn.resume-link, .resume-arrow, .work-box, .work-box::before,
+  .work-box .responsibilities, .experience-explore svg, .project-box, .project-box::before,
+  .project-box::after, .project-box .image-div img, .project-cta-label span { transition: none !important; }
+  .project-box:hover, .work-box:hover, a.resume-btn.resume-link:hover { transform: none !important; }
+}
+
+/* Make the existing project cards easier to read on desktop, without widening other sections. */
+@media (min-width: 999px) {
+  .projects-section-container {
+    width: min(1320px, calc(100vw - 56px));
+  }
+  .projects-section-div { width: min(86%, 1100px); }
+  .projects-section-div .project-boxes-div { padding: 34px 20px; gap: 32px; }
+  .projects-section-div .project-box .info-div { padding-left: 48px; padding-right: 34px; }
+  .projects-section-div .project-box .image-div { padding-left: 25px; }
+}
+a.resume-btn.resume-link { align-self: flex-start; }
