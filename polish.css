@@ -600,3 +600,25 @@ body:has(.resume-dialog[open]) .cursor-outer, body:has(.resume-dialog[open]) .cu
     padding-inline: clamp(18px, 5vw, 26px);
   }
 }
+/* Keep each homepage headline sentence on one line */
+#work {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  width: 100%;
+  font-size: clamp(2.8rem, 4.7vw, 8rem);
+}
+
+#work .hero-headline-line {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  gap: 0.17em;
+  margin: 0;
+}
+
+#work .hero-headline-line > div {
+  display: flex;
+  margin: 0;
+}
