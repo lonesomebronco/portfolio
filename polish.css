@@ -602,7 +602,10 @@ body:has(.resume-dialog[open]) .cursor-outer, body:has(.resume-dialog[open]) .cu
 }
 
 /* Slightly smaller introductory headline; preserves the original individual-letter animation. */
-#home #work { font-size: 7.2rem; }
+#home #work {
+  font-size: clamp(2.8rem, 3vw, 4.5rem);
+  line-height: 1.15;
+}
 @media (max-width: 768px) {
   #home #work { font-size: 5rem; }
 }
