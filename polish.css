@@ -601,14 +601,47 @@ body:has(.resume-dialog[open]) .cursor-outer, body:has(.resume-dialog[open]) .cu
   }
 }
 
-/* Slightly smaller introductory headline; preserves the original individual-letter animation. */
+
 #home #work {
-  font-size: clamp(2.8rem, 3vw, 4.5rem);
-  line-height: 1.15;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: .12em;
+  font-size: clamp(3rem, 3vw, 4.7rem);
+  line-height: 1.18;
+  width: 100%;
 }
+
+#home #work > .hero-headline-line {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: .24em;
+  margin: 0;
+  white-space: nowrap;
+}
+
+#home #work > .hero-headline-line > div {
+  display: inline-flex;
+  margin: 0;
+}
+
+#home #work > .hero-headline-line:first-child .jello {
+  color: #6bc5f8;
+}
+
+#home #work > .hero-headline-line:nth-child(2) .jello {
+  color: #cf59e6;
+}
+
 @media (max-width: 768px) {
-  #home #work { font-size: 5rem; }
+  #home #work {
+    font-size: clamp(2.3rem, 5vw, 4.1rem);
+  }
 }
+
 @media (max-width: 360px) {
-  #home #work { font-size: 4.6rem; }
+  #home #work {
+    font-size: clamp(2.05rem, 4.9vw, 2.9rem);
+  }
 }
