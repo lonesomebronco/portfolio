@@ -36,6 +36,55 @@
     });
   }
 
+  // Display local vector artwork instantly. If online, upgrade to official Devicon logos.
+  // Never let failed CDN requests leave empty circles.
+  document.querySelectorAll('.skill-orb img[data-official]').forEach(img => {
+    const preferred = img.dataset.official;
+    const requested = new Image();
+    requested.onload = () => { if (requested.naturalWidth > 0) img.src = preferred; };
+    requested.src = preferred;
+  });
+
+
+  // Skill clusters: a single accessible category opens at once; click it again to close.
+  const clusterButtons = [...document.querySelectorAll('.skill-cluster[data-cluster]')];
+  const clusterPanels = [...document.querySelectorAll('.skill-cluster-panel[data-panel]')];
+  const skillHint = document.querySelector('.skills-universe-hint');
+  let activeCluster = null;
+  const setCluster = (key, focusReturn = false) => {
+    const activeButton = clusterButtons.find(button => button.dataset.cluster === key);
+    const shouldOpen = key && activeCluster !== key;
+    activeCluster = shouldOpen ? key : null;
+    clusterButtons.forEach(button => {
+      const selected = button.dataset.cluster === activeCluster;
+      button.setAttribute('aria-expanded', String(selected));
+    });
+    clusterPanels.forEach(panel => {
+      const show = panel.dataset.panel === activeCluster;
+      panel.hidden = !show;
+      panel.classList.remove('is-open');
+      if (show) requestAnimationFrame(() => panel.classList.add('is-open'));
+    });
+    if (skillHint) skillHint.hidden = !!activeCluster;
+    if (focusReturn && activeButton) activeButton.focus({preventScroll:true});
+  };
+  clusterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const alreadyOpen = activeCluster === button.dataset.cluster;
+      setCluster(button.dataset.cluster);
+      if (!alreadyOpen && window.innerWidth < 680) {
+        const panel = document.querySelector('#skill-panel-' + button.dataset.cluster);
+        if (panel) {
+          const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          panel.scrollIntoView({block:'nearest',behavior:reduceMotion ? 'instant':'smooth'});
+        }
+      }
+    });
+  });
+  document.querySelectorAll('[data-close-skills]').forEach(close => {
+    close.addEventListener('click', () => setCluster(activeCluster, true));
+  });
+
   // One accessible source of truth: aria-expanded. All role cards render CLOSED
   // in the HTML, before JavaScript or any animations have run.
   const cards = [...document.querySelectorAll('#workex .work-box')];
