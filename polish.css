@@ -568,3 +568,35 @@ body:has(.resume-dialog[open]) .cursor-outer, body:has(.resume-dialog[open]) .cu
 .skill-cluster-panel::before {border-radius:25px 25px 0 0;}
 @media(max-width:680px){.skill-orbit-grid{gap:15px 9px}.skill-orb {flex-basis:clamp(99px,34vw,139px);width:clamp(99px,34vw,139px);height:clamp(99px,34vw,139px);min-height:0;padding:9px 5px}.skill-orb-graphic{width:47px;height:47px;flex-basis:47px;padding:9px}.skill-orb-name{font-size:1.13rem;max-width:98px}.skill-orb-detail{display:none}}
 @media(max-width:330px){.skill-orb{flex-basis:98px;width:98px;height:98px}.skill-orb-name{font-size:1.05rem}.skill-orb-graphic{width:40px;height:40px;flex-basis:40px}}
+
+/* V10 | Leadership alignment fix.
+   The earlier full-viewport override allowed cards and headings to touch
+   the left browser edge. Center a bounded inner column instead. */
+#leadership.leadership-section-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
+  padding-inline: clamp(20px, 5vw, 84px);
+  position: relative;
+  left: auto;
+  transform: none;
+  display: flex;
+  justify-content: center;
+}
+#leadership > .leadership-section {
+  width: 100%;
+  max-width: 1180px;
+  min-width: 0;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+#leadership .leadership-v2-intro,
+#leadership .leadership-v2-cards,
+#leadership .leadership-collab-strip,
+#leadership .leadership-endnote { width: 100%; min-width: 0; }
+@media (max-width: 600px) {
+  #leadership.leadership-section-container {
+    padding-inline: clamp(18px, 5vw, 26px);
+  }
+}
