@@ -17,10 +17,10 @@
 <title>Vaibhav Sharma | Portfolio</title>
 <link href="src/png/BITMOJI1.png" rel="icon" type="image/x-icon"/>
 <!-- aos cdn -->
-<link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"/>
+
 <!-- stylesheet -->
-<link href="style.css" rel="stylesheet"/>
-<link href="polish.css" rel="stylesheet"/>
+<link href="style.css?v=20261027-v7" rel="stylesheet"/>
+<link href="polish.css?v=20261027-v7" rel="stylesheet"/>
 <!-- google fonts-->
 <link href="https://fonts.googleapis.com/css2?family=Passions+Conflict&amp;family=Orbitron&amp;family=Fira+Code&amp;family=Six+Caps" rel="stylesheet"/>
 </head>
@@ -29,7 +29,7 @@
 <audio id="audioPlayer" loop="" style="display: none">
 <source src="src/mp3/preloader.mp3" type="audio/mp3"/>
 </audio>
-<div id="preloader"></div>
+<div aria-hidden="true" id="preloader"></div>
 <noscript>Allow Javascript</noscript>
 <header>
 <div class="cursor-inner" id="cursor-inner"></div>
@@ -43,32 +43,32 @@
 </div>
 <div class="navbar-tabs" id="navbar-tabs">
 <ul class="navbar-tabs-ul">
-<li class="navbar-tabs-li" data-aos="fade-down" data-aos-delay="100">
+<li class="navbar-tabs-li">
 <a aria-label="Home menu button" href="#home" tabindex="0">
               &lt;/Home&gt;
             </a>
-</li><li class="purpose navbar-tabs-li" data-aos="fade-down" data-aos-delay="180"><a aria-label="Purpose and motivation section" href="#healthcare">&lt;/Purpose&gt;</a></li>
-<li class="navbar-tabs-li" data-aos="fade-down" data-aos-delay="300">
+</li><li class="purpose navbar-tabs-li"><a aria-label="Purpose and motivation section" href="#healthcare">&lt;/Purpose&gt;</a></li>
+<li class="navbar-tabs-li">
 <a aria-label="about menu button" href="#about">
               &lt;/AboutMe&gt;
             </a>
 </li>
-<li class="navbar-tabs-li" data-aos="fade-down" data-aos-delay="500">
+<li class="navbar-tabs-li">
 <a aria-label="skills menu button" href="#skills">
               &lt;/Skills&gt;
             </a>
 </li>
-<li class="workex navbar-tabs-li" data-aos="fade-down" data-aos-delay="700">
+<li class="workex navbar-tabs-li">
 <a aria-label="Work Experience section" href="#workex">
               &lt;/Work Experience&gt;
             </a>
 </li>
-<li class="leadership navbar-tabs-li" data-aos="fade-down" data-aos-delay="800">
+<li class="leadership navbar-tabs-li">
 <a aria-label="Leadership section" href="#leadership">
               &lt;/Leadership&gt;
             </a>
 </li>
-<li class="navbar-tabs-li" data-aos="fade-down" data-aos-delay="900">
+<li class="navbar-tabs-li">
 <a aria-label="projects menu button" href="#projects">
               &lt;/Projects&gt;
             </a>
@@ -81,7 +81,7 @@
 <!-- header ends here -->
 <main>
 <!-- hamburger -->
-<div class="hamburger" data-aos="fade" id="hamburger">
+<div class="hamburger" id="hamburger">
 <div class="hamburgerbase">
 <button aria-label="Menu Button" id="hamburger-button" onclick="hamburgerMenu()" tabindex="0">
 <span class="burger-bar" id="burger-bar1"></span>
@@ -128,7 +128,7 @@
 <section class="landing-page-container" id="home">
 <div class="blob"></div>
 <div class="text-content">
-<article data-aos="fade-up" data-aos-delay="0" id="hello-friend">
+<article id="hello-friend">
 <p class="jello">W</p>
 <p class="jello">e</p>
 <p class="jello">l</p>
@@ -144,7 +144,7 @@
 <p class="jello">'</p>
 <p class="jello">m</p>
 </article>
-<article data-aos="fade-up" data-aos-delay="200" id="name">
+<article id="name">
 <p class="jello">V</p>
 <p class="jello">a</p>
 <p class="jello">i</p>
@@ -161,7 +161,7 @@
 <p class="jello">a</p>
 <p class="jello">.</p>
 </article>
-<article data-aos="fade-up" data-aos-delay="400" id="work">
+<article id="work">
 <div>
 <p class="jello">I</p>
 </div>
@@ -195,13 +195,13 @@
 <p class="jello">e</p>
 </div>
 </article>
-<p data-aos="fade-up" data-aos-delay="600" id="info-para">I'm a Senior Systems Analyst / Programmer at Rochester Regional Health, building secure, useful technology for the people behind healthcare. I care as much about unblocking teams and moving work forward as I do about great engineering.<br/><br/>My sweet spot: technical ownership, cross-team collaboration and helping people do their best work—with a genuine passion for where technology can take healthcare next.</p>
-<div aria-label="My focus areas" class="hero-signature" data-aos="fade-up" data-aos-delay="700">
+<p id="info-para">I'm a Senior Systems Analyst / Programmer at Rochester Regional Health, building secure, useful technology for the people behind healthcare. I care as much about unblocking teams and moving work forward as I do about great engineering.<br/><br/>My sweet spot: technical ownership, cross-team collaboration and helping people do their best work—with a genuine passion for where technology can take healthcare next.</p>
+<div aria-label="My focus areas" class="hero-signature">
 <span><span class="signature-dot"></span> Healthcare technology</span>
 <span>Engineering</span>
 <span>People &amp; leadership</span>
 </div>
-<div class="contact-btn-div" data-aos="fade-up" data-aos-delay="800">
+<div class="contact-btn-div">
 <a href="mailto:vs1654@g.rit.edu" tabindex="-1">
 <button class="letsTalkBtn">
 <p class="letsTalkBtn-text">Let's Talk!</p>
@@ -225,7 +225,7 @@
 </div>
 </section><section aria-labelledby="healthcare-heading" class="healthcare-mission" id="healthcare">
 <div class="healthcare-inner">
-<div class="healthcare-copy" data-aos="fade-up">
+<div class="healthcare-copy">
 <p class="healthcare-kicker"><span></span> THE REASON BEHIND THE WORK</p>
 <h2 id="healthcare-heading">For me, healthcare technology <em>is personal in purpose.</em></h2>
 <p class="healthcare-lede">A dependable system can give a clinician time back, help an employee navigate a complex day and let a team focus on what matters most. That's what motivates me: building technology that does its job so people can do theirs.</p>
@@ -235,7 +235,7 @@
 <div><span>03</span><strong>Make impact human.</strong><p>Stay curious about the people behind each requirement.</p></div>
 </div>
 </div>
-<div aria-label="Illustration of people, systems, and an animated heartbeat path" class="healthcare-visual" data-aos="fade-up" role="img">
+<div aria-label="Illustration of people, systems, and an animated heartbeat path" class="healthcare-visual" role="img">
 <div class="healthcare-visual-top"><span>PEOPLE ↔ TECHNOLOGY</span><span class="signal-live"><i></i> PURPOSE-DRIVEN</span></div>
 <div class="healthcare-wave">
 <span class="wave-watermark">CARE</span>
@@ -251,7 +251,7 @@
 </div>
 </section>
 <!-- landing page ends here -->
-<section class="about-section-container" data-aos="fade-up" id="about">
+<section class="about-section-container" id="about">
 <div class="about-section">
 <div class="section-heading">
 <h2 aria-label="About me heading" class="section-heading-article" tabindex="0">
@@ -279,7 +279,7 @@
 </button>
 <p class="resume-hint">Opens right here — no new page needed.</p>
 </div>
-<div class="dp" data-aos="fade-up">
+<div class="dp">
 <img alt="Vaibhav Sharma" aria-label="image of Vaibhav" src="src/webp/vaibhav.JPG" tabindex="0"/>
 </div>
 </div>
@@ -288,70 +288,70 @@
 <!-- about section ends  -->
 <section class="skills-section-container" id="skills">
 <div class="skills-section">
-<div class="section-heading" data-aos="fade-up">
+<div class="section-heading">
 <h2 aria-label="skills heading" class="section-heading-article" tabindex="0">
             &lt;/Skills&gt;
           </h2>
 <p class="sectionHeadingP"></p>
 </div>
 <div class="frontend-dev-section">
-<h3 aria-label="As a developer, these are the skills I have" class="frontend-dev-heading" data-aos="fade-up" tabindex="0">
+<h3 aria-label="As a developer, these are the skills I have" class="frontend-dev-heading" tabindex="0">
           Tech Stack
-        </h3><div aria-label="Current engineering focus" class="current-toolkit" data-aos="fade-up"><span class="current-toolkit-label"><i></i> CURRENT FOCUS</span><div><span>C# / .NET</span><span>React</span><span>Azure</span><span>Identity &amp; Security</span><span>GitHub &amp; CI/CD</span><span>Enterprise Architecture</span></div></div>
+        </h3><div aria-label="Current engineering focus" class="current-toolkit"><span class="current-toolkit-label"><i></i> CURRENT FOCUS</span><div><span>C# / .NET</span><span>React</span><span>Azure</span><span>Identity &amp; Security</span><span>GitHub &amp; CI/CD</span><span>Enterprise Architecture</span></div></div>
 <ul class="tech-stack-wrapper">
-<li class="tech-stack-box" data-aos="fade-up">
+<li class="tech-stack-box">
 <img alt="C++" class="tech-stack-logo" src="src/png/cpplogo.png"/>
 <span class="tooltip">C++</span>
 </li>
-<li class="tech-stack-box" data-aos="fade-up">
+<li class="tech-stack-box">
 <img alt="C" class="tech-stack-logo" src="src/png/clogo.png"/>
 <span class="tooltip">C</span>
 </li>
-<li class="tech-stack-box" data-aos="fade-up">
+<li class="tech-stack-box">
 <img alt="Java" class="tech-stack-logo" src="src/png/java.png"/>
 <span class="tooltip">Java</span>
 </li>
-<li class="tech-stack-box" data-aos="fade-up">
+<li class="tech-stack-box">
 <img alt="SQL" class="tech-stack-logo" src="src/png/mysql.jpeg"/>
 <span class="tooltip">MySQL</span>
 </li>
-<li class="tech-stack-box" data-aos="fade-up">
+<li class="tech-stack-box">
 <img alt="PostgreSQL" class="tech-stack-logo" src="src/png/postgres.jpeg"/>
 <span class="tooltip">PostgreSQL</span>
 </li>
-<li class="tech-stack-box" data-aos="fade-up">
+<li class="tech-stack-box">
 <img alt="MySQL" class="tech-stack-logo" src="src/png/mongo.png"/>
 <span class="tooltip">MongoDB</span>
 </li>
-<li class="tech-stack-box" data-aos="fade-up">
+<li class="tech-stack-box">
 <img alt="Python" class="tech-stack-logo" src="src/png/pythonlogo.jpeg"/>
 <span class="tooltip">Python</span>
 </li>
-<li class="tech-stack-box" data-aos="fade-up">
+<li class="tech-stack-box">
 <img alt="JavaScript" class="tech-stack-logo" src="src/png/jslogo.png"/>
 <span class="tooltip">JavaScript</span>
 </li>
-<li class="tech-stack-box" data-aos="fade-up">
+<li class="tech-stack-box">
 <img alt="React" class="tech-stack-logo" src="src/png/reactlogo.png"/>
 <span class="tooltip">React</span>
 </li>
-<li class="tech-stack-box" data-aos="fade-up">
+<li class="tech-stack-box">
 <img alt="HTML5" class="tech-stack-logo" src="src/png/htmllogo.png"/>
 <span class="tooltip">HTML5</span>
 </li>
-<li class="tech-stack-box" data-aos="fade-up">
+<li class="tech-stack-box">
 <img alt="CSS3" class="tech-stack-logo" src="src/png/csslogo.png"/>
 <span class="tooltip">CSS3</span>
 </li>
-<li class="tech-stack-box" data-aos="fade-up">
+<li class="tech-stack-box">
 <img alt="PHP" class="tech-stack-logo" src="src/png/phplogo.png"/>
 <span class="tooltip">PHP</span>
 </li>
-<li class="tech-stack-box" data-aos="fade-up">
+<li class="tech-stack-box">
 <img alt="Wireshark" class="tech-stack-logo" src="src/png/wiresharklogo.jpeg"/>
 <span class="tooltip">Wireshark</span>
 </li>
-<li class="tech-stack-box" data-aos="fade-up">
+<li class="tech-stack-box">
 <img alt="AWS" class="tech-stack-logo" src="src/png/awslogo.png"/>
 <span class="tooltip">AWS</span>
 </li>
@@ -360,21 +360,21 @@
 <!-- New standalone leadership section. The original site layout and navigation are unchanged. -->
 </div></section><section class="work-section-container" id="workex">
 <div class="work-section">
-<div class="section-heading" data-aos="fade-up">
+<div class="section-heading">
 <h2 aria-label="Work Experience heading" class="section-heading-article" tabindex="0">
                 &lt;/Work Experience&gt;
             </h2>
 </div>
-<div class="experience-intro-wrap" data-aos="fade-up">
+<div class="experience-intro-wrap">
 <span class="editorial-eyebrow">THE JOURNEY SO FAR <span class="eyebrow-line"></span> 2019 — NOW</span>
 <h3 class="experience-editorial-heading">I build systems. I connect teams.<br/><em>I help work move forward.</em></h3>
-<p class="work-section-intro">From student mentorship to healthcare engineering, my work has grown from writing software to helping teams deliver it. <span>Tap or click a role to see what I contributed.</span></p>
+<p class="work-section-intro">From writing software to helping people and teams deliver meaningful outcomes. <span class="experience-gesture-hint">Explore each chapter to see the impact.</span></p>
 </div>
 <!-- Central timeline for visual reference -->
-<div class="work-boxes-div"><div class="work-timeline"></div>
+<div class="work-boxes-div">
 <!-- Current role: added October 2026. Same original timeline component. -->
-<div aria-expanded="false" aria-label="Expand senior systems analyst programmer role details" class="work-box left current-role" data-aos="fade-up" role="button" tabindex="0">
-<div class="timeline-dot"></div>
+<div aria-controls="role-details-1" aria-expanded="false" aria-label="Expand Systems Analyst / Programmer — Senior experience details" class="work-box left current-role" data-role-index="01" role="button" tabindex="0">
+
 <div class="work-info">
 <p class="role">Systems Analyst / Programmer — Senior</p>
 <p class="company">Rochester Regional Health · Emerging Technologies</p>
@@ -383,12 +383,12 @@
 <span aria-hidden="true" class="experience-explore">Read highlights
                       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><path d="M7 10l5 5 5-5"></path></svg>
 </span>
-<ul class="responsibilities"><li>Lead security hardening workstreams for Emerging Technologies, partnering on identity improvements, credential practices, code and dependency risk, and remediation coordination.</li><li>Help shape application rationalization and modernization: understanding legacy systems, surfacing dependencies, and coordinating safe improvement or retirement paths.</li><li>Facilitate Scrum discussions and Agile SDLC routines, clarify priorities, and help the team resolve blockers and move delivery forward.</li><li>Coordinate urgent Ivanti incidents and service requests with the right technical owners, help set priorities, and keep the team focused on clearing its queue.</li><li>Partner with security, infrastructure, identity, cloud, application and business teams to connect decisions, remove roadblocks, and keep everyone aligned.</li><li>Guide co-ops and teammates through code, architecture diagrams, design tradeoffs, reviews and everyday technical questions.</li><li>Contribute to team culture and knowledge sharing, including collaborative sessions and team-building activities.</li></ul>
+<ul class="responsibilities" id="role-details-1" style="height:0px;overflow:hidden;"><li>Lead security hardening workstreams for Emerging Technologies, partnering on identity improvements, credential practices, code and dependency risk, and remediation coordination.</li><li>Help shape application rationalization and modernization: understanding legacy systems, surfacing dependencies, and coordinating safe improvement or retirement paths.</li><li>Facilitate Scrum discussions and Agile SDLC routines, clarify priorities, and help the team resolve blockers and move delivery forward.</li><li>Coordinate urgent Ivanti incidents and service requests with the right technical owners, help set priorities, and keep the team focused on clearing its queue.</li><li>Partner with security, infrastructure, identity, cloud, application and business teams to connect decisions, remove roadblocks, and keep everyone aligned.</li><li>Guide co-ops and teammates through code, architecture diagrams, design tradeoffs, reviews and everyday technical questions.</li><li>Contribute to team culture and knowledge sharing, including collaborative sessions and team-building activities.</li></ul>
 </div>
 </div>
 <!-- Co-op -->
-<div class="work-box right" data-aos="fade-up"> <!-- Positioned on the left -->
-<div class="timeline-dot"></div>
+<div aria-controls="role-details-2" aria-expanded="false" aria-label="Expand Software Development Co-op experience details" class="work-box right" data-role-index="02"> <!-- Positioned on the left -->
+
 <div class="work-info">
 <p class="role">Software Development Co-op</p>
 <p class="company">Rochester Regional Health</p>
@@ -396,15 +396,15 @@
 <span aria-hidden="true" class="experience-explore">Read highlights
                       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><path d="M7 10l5 5 5-5"></path></svg>
 </span>
-<ul class="responsibilities">
+<ul class="responsibilities" id="role-details-2" style="height:0px;overflow:hidden;">
 <li>Designing and developing a responsive web application using React for automating nurse competency approval, streamlining manual processes, improving nurse eﬀiciency, and decoupling nurse-supervisor interactions.</li>
 <li>Contributed to a healthcare workflow designed to reduce repetitive administrative steps and make nurse-supervisor collaboration easier.</li>
 </ul>
 </div>
 </div>
 <!-- Teaching Assistant -->
-<div class="work-box left" data-aos="fade-up"> <!-- Positioned on the left -->
-<div class="timeline-dot"></div>
+<div aria-controls="role-details-3" aria-expanded="false" aria-label="Expand Teaching Assistant -&gt; Advanced Object-Oriented Programming (using Java) experience details" class="work-box left" data-role-index="03"> <!-- Positioned on the left -->
+
 <div class="work-info">
 <p class="role">Teaching Assistant -&gt; Advanced Object-Oriented Programming (using Java)</p>
 <p class="company">Rochester Institute of Technology, Rochester, NY, USA</p>
@@ -412,15 +412,15 @@
 <span aria-hidden="true" class="experience-explore">Read highlights
                       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><path d="M7 10l5 5 5-5"></path></svg>
 </span>
-<ul class="responsibilities">
+<ul class="responsibilities" id="role-details-3" style="height:0px;overflow:hidden;">
 <li>Guiding 50+ students in Java and OOPS concepts, resulting in a 20% increase in average assignment grades over the semester, while delivering tailored lessons and assessments to enhance understanding of Java principles.</li>
 <li>Provided constructive feedback on code quality, efficiency, and adherence to requirements, ensuring students' continuous improvement in Java programming skills.</li>
 </ul>
 </div>
 </div>
 <!-- Graduate Assistant -->
-<div class="work-box right" data-aos="fade-up"> <!-- Positioned on the right -->
-<div class="timeline-dot"></div>
+<div aria-controls="role-details-4" aria-expanded="false" aria-label="Expand Graduate Assistant experience details" class="work-box right" data-role-index="04"> <!-- Positioned on the right -->
+
 <div class="work-info">
 <p class="role">Graduate Assistant</p>
 <p class="company">Rochester Institute of Technology, Rochester, NY, USA</p>
@@ -428,15 +428,15 @@
 <span aria-hidden="true" class="experience-explore">Read highlights
                       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><path d="M7 10l5 5 5-5"></path></svg>
 </span>
-<ul class="responsibilities">
+<ul class="responsibilities" id="role-details-4" style="height:0px;overflow:hidden;">
 <li>Evaluated and analyzed data for MCAS &amp; DDI Tutoring, achieving a 30% improvement in program effectiveness, while overseeing a team of 10+ peer tutoring leaders to increase student engagement by 25%.</li>
 <li>Collaborated on team-building activities, resulting in a 100% increase in participation in the Peer Course Consultant program.</li>
 </ul>
 </div>
 </div>
 <!-- Retail Systems Analyst -->
-<div class="work-box left" data-aos="fade-up"> <!-- Positioned back on the left -->
-<div class="timeline-dot"></div>
+<div aria-controls="role-details-5" aria-expanded="false" aria-label="Expand Retail Systems Analyst experience details" class="work-box left" data-role-index="05"> <!-- Positioned back on the left -->
+
 <div class="work-info">
 <p class="role">Retail Systems Analyst</p>
 <p class="company">Rochester Institute of Technology, Rochester, NY, USA</p>
@@ -444,15 +444,15 @@
 <span aria-hidden="true" class="experience-explore">Read highlights
                       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><path d="M7 10l5 5 5-5"></path></svg>
 </span>
-<ul class="responsibilities">
+<ul class="responsibilities" id="role-details-5" style="height:0px;overflow:hidden;">
 <li>Mentored in managing online systems for 7+ RIT Dining facilities, ensuring PCI DSS compliance, and resolving incidents.</li>
 <li>Managed tasks within InfoGenesis, OnDemand Ordering, and Yellow Dog Inventory of 2000+ items to streamline operations.</li>
 </ul>
 </div>
 </div>
 <!-- Orientation Leader -->
-<div class="work-box right" data-aos="fade-up"> <!-- Positioned back on the right -->
-<div class="timeline-dot"></div>
+<div aria-controls="role-details-6" aria-expanded="false" aria-label="Expand Orientation Leader experience details" class="work-box right" data-role-index="06"> <!-- Positioned back on the right -->
+
 <div class="work-info">
 <p class="role">Orientation Leader</p>
 <p class="company">Rochester Institute of Technology, Rochester, NY, USA</p>
@@ -460,14 +460,14 @@
 <span aria-hidden="true" class="experience-explore">Read highlights
                       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><path d="M7 10l5 5 5-5"></path></svg>
 </span>
-<ul class="responsibilities">
+<ul class="responsibilities" id="role-details-6" style="height:0px;overflow:hidden;">
 <li>Coordinated over 25 students during orientation, providing adaptive leadership and fostering team success through effective communication, ensuring a smooth and impactful experience for all participants.</li>
 </ul>
 </div>
 </div>
 <!-- Software Development and Research Internship -->
-<div class="work-box left" data-aos="fade-up"> <!-- Alternating back to the left -->
-<div class="timeline-dot"></div>
+<div aria-controls="role-details-7" aria-expanded="false" aria-label="Expand Software Development and Research Internship experience details" class="work-box left" data-role-index="07"> <!-- Alternating back to the left -->
+
 <div class="work-info">
 <p class="role">Software Development and Research Internship</p>
 <p class="company">The LNM Institute of Information Technology, Jaipur, India</p>
@@ -475,15 +475,15 @@
 <span aria-hidden="true" class="experience-explore">Read highlights
                       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><path d="M7 10l5 5 5-5"></path></svg>
 </span>
-<ul class="responsibilities">
+<ul class="responsibilities" id="role-details-7" style="height:0px;overflow:hidden;">
 <li>Implemented a Linear Regression Model on the Covid dataset of Chicago with 10,000+ entries.</li>
 <li>Designed the relationship between the number of Covid tests and positive cases, achieving an impressive accuracy of 87%.</li>
 </ul>
 </div>
 </div>
 <!-- Software Development Internship -->
-<div class="work-box right" data-aos="fade-up"> <!-- Finally, on the right -->
-<div class="timeline-dot"></div>
+<div aria-controls="role-details-8" aria-expanded="false" aria-label="Expand Software Development Internship experience details" class="work-box right" data-role-index="08"> <!-- Finally, on the right -->
+
 <div class="work-info">
 <p class="role">Software Development Internship</p>
 <p class="company">ACPL Systems Pvt. Ltd, Gurgaon, India</p>
@@ -491,7 +491,7 @@
 <span aria-hidden="true" class="experience-explore">Read highlights
                       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24"><path d="M7 10l5 5 5-5"></path></svg>
 </span>
-<ul class="responsibilities">
+<ul class="responsibilities" id="role-details-8" style="height:0px;overflow:hidden;">
 <li>Constructed a packet sniffer on 5 computer network protocols for “Attack Fence”, reducing network security breaches by 30%.</li>
 <li>Led a team of 5 to research Cyber Security Compliance, resulting in recommendations that revamped system security by 25%.</li>
 </ul>
@@ -501,11 +501,11 @@
 </div>
 </section><section aria-labelledby="leadership-heading" class="leadership-section-container" id="leadership">
 <div class="leadership-section">
-<div class="section-heading" data-aos="fade-up">
+<div class="section-heading">
 <h2 class="section-heading-article" id="leadership-heading" tabindex="0">&lt;/Leadership&gt;</h2>
 <p class="sectionHeadingP"></p>
 </div>
-<div class="leadership-v2-intro" data-aos="fade-up">
+<div class="leadership-v2-intro">
 <div class="leadership-headline">
 <p class="leadership-eyebrow"><span class="leader-eyebrow-dot"></span> HOW I LEAD, EVERY DAY</p>
 <h3>Technical depth.<br/><span class="leadership-gradient">People-first momentum.</span></h3>
@@ -519,42 +519,42 @@
 </div>
 </div>
 <div aria-label="Leadership in practice" class="leadership-v2-cards">
-<article class="leadership-card leadership-v2-card" data-aos="fade-up" data-aos-delay="0">
+<article class="leadership-card leadership-v2-card">
 <div class="leadership-card-top"><span>01 / SECURITY</span><span aria-hidden="true">↗</span></div>
 <span aria-hidden="true" class="leadership-symbol">{ secure }</span>
 <h4>Lead with ownership.</h4>
 <p>Lead security-focused workstreams within Emerging Technologies, collaborating on identity and credential practices, code and dependency risks, and remediation plans.</p>
 <div class="leadership-card-foot">SECURITY · RISK · FOLLOW-THROUGH</div>
 </article>
-<article class="leadership-card leadership-v2-card" data-aos="fade-up" data-aos-delay="50">
+<article class="leadership-card leadership-v2-card">
 <div class="leadership-card-top"><span>02 / APPLICATION STRATEGY</span><span aria-hidden="true">↗</span></div>
 <span aria-hidden="true" class="leadership-symbol">[ simplify ]</span>
 <h4>Think beyond the ticket.</h4>
 <p>Help the team rationalize its application portfolio: map dependencies, challenge unnecessary complexity and find thoughtful paths to modernize or retire aging systems.</p>
 <div class="leadership-card-foot">PORTFOLIO · MODERNIZATION · JUDGMENT</div>
 </article>
-<article class="leadership-card leadership-v2-card" data-aos="fade-up" data-aos-delay="100">
+<article class="leadership-card leadership-v2-card">
 <div class="leadership-card-top"><span>03 / DELIVERY</span><span aria-hidden="true">↗</span></div>
 <span aria-hidden="true" class="leadership-symbol">run: sprint</span>
 <h4>Turn urgency into clarity.</h4>
 <p>Facilitate Scrum and Agile delivery, make sprint priorities visible, and coordinate urgent Ivanti incidents and requests so the highest-impact work moves forward.</p>
 <div class="leadership-card-foot">SCRUM · IVANTI · PRIORITIZATION</div>
 </article>
-<article class="leadership-card leadership-v2-card" data-aos="fade-up" data-aos-delay="0">
+<article class="leadership-card leadership-v2-card">
 <div class="leadership-card-top"><span>04 / MENTORSHIP</span><span aria-hidden="true">↗</span></div>
 <span aria-hidden="true" class="leadership-symbol">git grow --team</span>
 <h4>Make others stronger.</h4>
 <p>Guide co-ops through code, architecture diagrams, engineering decisions and daily blockers. Explain the why, give useful feedback and help people own their next step.</p>
 <div class="leadership-card-foot">COACHING · ARCHITECTURE · TRUST</div>
 </article>
-<article class="leadership-card leadership-v2-card" data-aos="fade-up" data-aos-delay="50">
+<article class="leadership-card leadership-v2-card">
 <div class="leadership-card-top"><span>05 / COLLABORATION</span><span aria-hidden="true">↗</span></div>
 <span aria-hidden="true" class="leadership-symbol">&lt; connect /&gt;</span>
 <h4>Connect the right people.</h4>
 <p>Work across security, IAM, infrastructure, cloud, development and business partners. Translate perspectives, communicate decisions and help teams reach shared outcomes.</p>
 <div class="leadership-card-foot">RELATIONSHIPS · ALIGNMENT · EXECUTION</div>
 </article>
-<article class="leadership-card leadership-v2-card" data-aos="fade-up" data-aos-delay="100">
+<article class="leadership-card leadership-v2-card">
 <div class="leadership-card-top"><span>06 / CULTURE</span><span aria-hidden="true">↗</span></div>
 <span aria-hidden="true" class="leadership-symbol">people++;</span>
 <h4>Build belonging, too.</h4>
@@ -562,27 +562,27 @@
 <div class="leadership-card-foot">CULTURE · COMMUNICATION · CARE</div>
 </article>
 </div>
-<div aria-label="Cross-team partnerships" class="leadership-collab-strip" data-aos="fade-up">
+<div aria-label="Cross-team partnerships" class="leadership-collab-strip">
 <p>THE WORK RUNS ACROSS TEAMS</p>
 <div class="collab-nodes">
 <span>Emerging Tech</span><span>Security</span><span>Identity &amp; Access</span><span>Infrastructure</span><span>Cloud</span><span>Business partners</span>
 </div>
 </div>
-<div class="leadership-endnote" data-aos="fade-up">
+<div class="leadership-endnote">
 <span aria-hidden="true">✳</span>
 <p>My goal isn't to be the loudest person in the room. It's to be the person who brings the right people together, keeps the team moving, and helps everyone do their best work.</p>
 </div>
 </div>
 </section><section class="projects-section-container" id="projects">
 <div class="projects-section-div">
-<div class="section-heading" data-aos="fade-up">
+<div class="section-heading">
 <h2 aria-label="My projects starts from here" class="section-heading-article" tabindex="0">
             &lt;/Projects&gt;
           </h2>
 <p class="sectionHeadingP"></p>
 </div>
-<p class="projects-intro" data-aos="fade-up">Six things I've built or explored, each rooted in curiosity and the joy of solving a real problem. Browse by interest or explore them all.</p>
-<div aria-label="Filter portfolio projects" class="project-toolbar" data-aos="fade-up">
+<p class="projects-intro">Six things I've built or explored, each rooted in curiosity and the joy of solving a real problem. Browse by interest or explore them all.</p>
+<div aria-label="Filter portfolio projects" class="project-toolbar">
 <div aria-label="Project filters" class="project-filters" role="group">
 <button aria-pressed="true" class="project-filter active" data-filter="all" type="button">All projects <span>06</span></button>
 <button aria-pressed="false" class="project-filter" data-filter="data" type="button">Data &amp; AI</button>
@@ -591,7 +591,7 @@
 <p aria-live="polite" class="projects-showing" id="project-count">Showing 6 projects</p>
 </div>
 <div class="project-boxes-div" id="project-gallery">
-<div class="project-box-wrapper" data-aos="fade-up" data-category="data">
+<div class="project-box-wrapper" data-category="data">
 <div class="project-box project-box2" data-project-index="1" id="project-box2">
 <div class="info-div">
 <img alt="drowsiness" class="faviconforProject" src="src/webp/code.webp"/>
@@ -612,7 +612,7 @@
 <span aria-hidden="true" class="visual-caption">VISION / BUILD</span></div>
 </div>
 </div>
-<div class="project-box-wrapper" data-aos="fade-up" data-category="data">
+<div class="project-box-wrapper" data-category="data">
 <div class="project-box project-box5" data-project-index="2" id="project-box5">
 <div class="info-div">
 <img alt="Linear Regression Covid Data" class="faviconforProject" src="src/webp/code.webp"/>
@@ -634,7 +634,7 @@
 </div>
 </div>
 <!-- ---------------------- -->
-<div class="project-box-wrapper" data-aos="fade-up" data-category="systems">
+<div class="project-box-wrapper" data-category="systems">
 <div class="project-box project-box2" data-project-index="3" id="project-box-network">
 <div class="info-div">
 <img alt="Network Packet Sniffer" class="faviconforProjectAquaregia" src="src/webp/code.webp"/>
@@ -656,7 +656,7 @@
 </div>
 </div>
 <!-- ---------------------- -->
-<div class="project-box-wrapper" data-aos="fade-up" data-category="data">
+<div class="project-box-wrapper" data-category="data">
 <div class="project-box project-box4" data-project-index="4" id="project-box4">
 <div class="info-div">
 <img alt="QNYC Crash analysis" class="faviconforProject" src="src/webp/code.webp"/>
@@ -678,7 +678,7 @@
 </div>
 </div>
 <!-- ---------------------- -->
-<div class="project-box-wrapper" data-aos="fade-up" data-category="systems">
+<div class="project-box-wrapper" data-category="systems">
 <div class="project-box project-box3" data-project-index="5" id="project-box3">
 <div class="info-div">
 <img alt="Providing SaaS using Docker containers over the cloud" class="faviconforProject" src="src/webp/code.webp"/>
@@ -700,7 +700,7 @@
 </div>
 </div>
 <!-- ---------------------- -->
-<div class="project-box-wrapper" data-aos="fade-up" data-category="systems">
+<div class="project-box-wrapper" data-category="systems">
 <div class="project-box project-box1" data-project-index="6" id="project-box1">
 <div class="info-div">
 <img alt="Attendance Automation by AWS" class="faviconforProject" src="src/webp/code.webp"/>
@@ -810,11 +810,9 @@
 </div>
 </dialog>
 <script src="main.js"></script>
-<script defer="" src="portfolio-extras.js"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    if (window.AOS) AOS.init({duration: 750, once: true, offset: 70});
-  </script>
+<script defer="" src="portfolio-extras.js?v=20261027-v7"></script>
+
+
 <script>
     const cursorInner = document.getElementById("cursor-inner");
     const cursorOuter = document.getElementById("cursor-outer");

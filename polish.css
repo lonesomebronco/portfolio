@@ -313,3 +313,143 @@ body:has(.resume-dialog[open]) .cursor-outer, body:has(.resume-dialog[open]) .cu
 @media (min-width: 999px) {
   .navbar-tabs-ul li { font-size: clamp(1.16rem, 1vw, 1.45rem); }
 }
+
+
+
+/* ════════════════════════════════════════════════════════════════════
+   V7 — clean editorial experience grid. THE OLD VERTICAL LINE IS REMOVED.
+   Same original #11111b / #8000ff / #cf59e6 / #6bc5f8 color system.
+   ════════════════════════════════════════════════════════════════════ */
+#workex .work-timeline, #workex .timeline-dot { display:none !important; }
+#workex .work-boxes-div {
+  position:relative;
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:stretch;
+  gap:clamp(15px,2vw,24px);
+  width:100%;
+  max-width:1060px;
+  margin:0 auto;
+  isolation:isolate;
+}
+#workex .work-boxes-div::before, #workex .work-boxes-div::after { content:none !important; display:none !important; }
+#workex .work-box,
+#workex .work-box.left,
+#workex .work-box.right {
+  margin:0 !important;
+  width:100% !important;
+  min-width:0;
+  align-self:stretch;
+  border-radius:19px;
+  padding:clamp(22px,2.4vw,30px);
+  border:1px solid rgba(207,89,230,.19);
+  background:linear-gradient(145deg,rgba(128,0,255,.066),rgba(107,197,248,.013) 70%),var(--color-dark-mode);
+  box-shadow:0 8px 35px rgba(0,0,0,.11),inset 0 1px 0 rgba(255,255,255,.035);
+  transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s,border-color .3s,background .4s;
+  overflow:hidden;
+  cursor:pointer;
+}
+#workex .work-box.current-role {
+  grid-column:1 / -1;
+  border:1px solid rgba(207,89,230,.49);
+  background:radial-gradient(ellipse at 100% 0%,rgba(128,0,255,.16),transparent 50%),linear-gradient(135deg,rgba(128,0,255,.12),rgba(107,197,248,.02) 80%),var(--color-dark-mode);
+  box-shadow:0 18px 54px rgba(128,0,255,.08), inset 0 1px 0 rgba(255,255,255,.04);
+}
+#workex .work-box::after { display:none !important; }
+#workex .work-box::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  border-radius:inherit;
+  opacity:0;
+  background:radial-gradient(500px circle at var(--spot-x,50%) var(--spot-y,0px),rgba(128,0,255,.10),transparent 55%);
+  transition:opacity .45s ease;
+}
+#workex .work-box .work-info { position:relative; z-index:1; }
+#workex .work-box:hover,
+#workex .work-box:focus-visible {
+  transform:translateY(-4px);
+  border-color:rgba(207,89,230,.52);
+  box-shadow:0 22px 54px rgba(0,0,0,.20),0 0 30px rgba(128,0,255,.06);
+}
+#workex .work-box:hover::before, #workex .work-box:focus-visible::before {opacity:1;}
+#workex .work-box.current-role:hover {border-color:rgba(107,197,248,.65);}
+#workex .work-boxes-div {counter-reset:experience-chapter;}
+#workex .work-box {counter-increment:experience-chapter;}
+#workex .work-box[data-role-index] .work-info::before {
+  content:'CHAPTER ' counter(experience-chapter, decimal-leading-zero);
+  display:block;
+  padding:0 0 12px;
+  color:var(--color-light-blue);
+  letter-spacing:.16em;
+  font:1.08rem 'Fira Code',monospace;
+  opacity:.79;
+}
+#workex .work-box.current-role .work-info::before {content:'CURRENT CHAPTER  ·  LEADERSHIP IN ACTION';}
+#workex .work-box .role {font-size:clamp(1.7rem,1.4vw,2.15rem);line-height:1.28;margin-bottom:8px;}
+#workex .work-box.current-role .role {font-size:clamp(2rem,2vw,2.8rem);}
+#workex .work-box .duration {font-size:1.15rem;margin:10px 0 14px;}
+#workex .work-box .company {font-size:1.4rem;}
+#workex .experience-intro-wrap {position:relative;z-index:3;margin:0 auto clamp(38px,5vw,72px);padding:0 14px;max-width:850px;}
+#workex .section-heading {position:relative;z-index:3;margin-bottom:34px;}
+#workex .work-box .responsibilities,
+#workex .work-box.clicked .responsibilities {
+  display:block !important;
+  height:0;
+  max-height:none;
+  opacity:0;
+  overflow:hidden;
+  margin:0;
+  visibility:hidden;
+  transition:height .65s cubic-bezier(.22,1,.36,1),opacity .4s ease,margin .4s ease,visibility 0s linear .6s;
+}
+#workex .work-box[aria-expanded='true'] .responsibilities {
+  visibility:visible;
+  opacity:1;
+  margin-top:16px;
+  transition:height .65s cubic-bezier(.22,1,.36,1),opacity .48s ease .08s,margin .35s ease,visibility 0s;
+}
+#workex .work-box[aria-expanded='false'] .responsibilities {height:0;opacity:0;visibility:hidden;margin:0;}
+#workex .work-box .experience-explore {min-height:38px;transition:background .3s,color .3s,border-color .3s,transform .3s;}
+#workex .work-box:hover .experience-explore {transform:translateX(4px);}
+#workex .work-box[aria-expanded='true'] .experience-explore svg {transform:rotate(180deg);}
+#workex .work-box .responsibilities li {font-size:1.38rem;line-height:1.7;}
+/* A timeline belongs in the story of the roles, not as a line through the page. */
+#workex .experience-editorial-heading {letter-spacing:-.03em;}
+#workex .experience-gesture-hint {color:var(--color-light-blue);}
+
+/* Distinct but quiet transitions across work, leadership and projects. */
+.motion-reveal {opacity:0;transform:translate3d(0,23px,0);}
+.motion-reveal.is-visible {opacity:1;transform:translateZ(0);transition:opacity .8s ease var(--motion-delay,0ms),transform .82s cubic-bezier(.22,1,.36,1) var(--motion-delay,0ms);}
+#projects .project-box {transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s,border-color .35s;}
+#projects .project-box:hover {transform:translateY(-7px);box-shadow:0 22px 48px rgba(128,0,255,.11);}
+#projects .project-box .image-div img {transition:transform .7s cubic-bezier(.22,1,.36,1),filter .6s;}
+#projects .project-box:hover .image-div img {transform:scale(1.035);}
+.leadership-card {transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .4s,border-color .4s;}
+.leadership-card:hover {transform:translateY(-5px);}
+#healthcare .healthcare-visual {transition:transform .7s cubic-bezier(.22,1,.36,1),box-shadow .6s;}
+@media(hover:hover) and (pointer:fine) {#healthcare .healthcare-visual:hover {transform:translateY(-4px);}}
+/* fixed header shouldn't turn underlying skill icons into distracting bright squares */
+.navbar {box-shadow:0 13px 45px rgba(0,0,0,.22);}
+#workex, #healthcare, #leadership, #projects {scroll-margin-top:125px;}
+@media(max-width:760px) {
+  #workex .work-boxes-div {grid-template-columns:minmax(0,1fr);gap:15px;}
+  #workex .work-box.current-role {grid-column:auto;}
+  #workex .work-box, #workex .work-box.left, #workex .work-box.right {
+    width:100% !important;margin:0 !important;padding:clamp(19px,5vw,27px);
+  }
+  #workex .work-section {width:calc(100% - 32px);}
+  #workex .experience-intro-wrap {margin-bottom:30px;}
+}
+@media(max-width:400px) {
+  #workex .work-box .role {font-size:1.68rem;}
+  #workex .work-box.current-role .role {font-size:1.94rem;}
+  #workex .experience-editorial-heading {font-size:2.65rem;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .motion-reveal,.motion-reveal.is-visible {opacity:1!important;transform:none!important;transition:none!important;}
+  #workex .work-box,.project-box,.leadership-card,.healthcare-visual,
+  #workex .work-box .responsibilities {transition:none!important;animation:none!important;}
+}
