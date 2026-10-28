@@ -50,8 +50,8 @@
     card.tabIndex = 0;
     card.setAttribute('role','button');
     card.setAttribute('aria-expanded','false');
-    // The current role tells the main story immediately; earlier roles are optional details.
-    setExpanded(card, index === 0);
+    // All roles start closed, including the current role. Visitors choose what to read.
+    setExpanded(card, false);
     const toggle = () => setExpanded(card, !card.classList.contains('clicked'));
     card.addEventListener('click', (event) => {
       if (event.target.closest('a, button')) return;
