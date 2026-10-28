@@ -645,3 +645,153 @@ body:has(.resume-dialog[open]) .cursor-outer, body:has(.resume-dialog[open]) .cu
     font-size: clamp(2.05rem, 4.9vw, 2.9rem);
   }
 }
+
+/* ===== HERO: THREE SEPARATE LINES ===== */
+
+/* Vaibhav Sharma stays on one line */
+#home #name {
+  display: flex;
+  flex-wrap: nowrap !important;
+  white-space: nowrap;
+  width: max-content;
+  max-width: 100%;
+  font-size: clamp(2.7rem, 5vw, 8rem);
+  line-height: 1.08;
+}
+
+/* Each headline gets its own line */
+#home #work {
+  display: flex;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-start;
+  gap: .13em;
+  width: 100%;
+  font-size: clamp(2.85rem, 3vw, 4.7rem);
+  line-height: 1.14;
+}
+
+#home #work > .hero-headline-line {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap;
+  width: max-content;
+  max-width: 100%;
+  gap: .22em;
+}
+
+#home #work > .hero-headline-line > div {
+  display: inline-flex;
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+/* Dark-mode headline colors */
+#home #work > .hero-headline-line:first-child .jello {
+  color: #6bc5f8;
+}
+
+#home #work > .hero-headline-line:nth-child(2) .jello {
+  color: #cf59e6;
+}
+
+/* Responsive phones */
+@media (max-width: 768px) {
+  #home #name {
+    font-size: clamp(2.5rem, 6.8vw, 5.5rem);
+  }
+
+  #home #work {
+    font-size: clamp(2.45rem, 5.5vw, 4rem);
+  }
+}
+
+@media (max-width: 360px) {
+  #home #name {
+    font-size: clamp(2.15rem, 6.5vw, 3.5rem);
+  }
+
+  #home #work {
+    font-size: clamp(2.25rem, 5.4vw, 3.2rem);
+  }
+}
+
+/* ===== LIGHT MODE READABILITY ===== */
+
+body.light-mode {
+  --color-white: #201627;
+  --color-ddd-color: #382f40;
+  --color-gray: #554b5d;
+  --color-light-blue: #146c94;
+  --color-light-purple: #8c279d;
+}
+
+/* Stronger name gradient */
+body.light-mode #home #name {
+  background: linear-gradient(
+    108deg,
+    #286ca4,
+    #6c4bb7 48%,
+    #a52d9c
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* More readable headline colors */
+body.light-mode #home #work
+> .hero-headline-line:first-child .jello {
+  color: #146c94;
+}
+
+body.light-mode #home #work
+> .hero-headline-line:nth-child(2) .jello {
+  color: #89279b;
+}
+
+/* Darker secondary descriptions */
+body.light-mode .hero-signature > span,
+body.light-mode .healthcare-values p,
+body.light-mode .skills-universe-intro p,
+body.light-mode .skill-panel-heading p,
+body.light-mode .leadership-aside > span,
+body.light-mode .projects-showing,
+body.light-mode .work-section-intro,
+body.light-mode .about-info p {
+  color: #51465a;
+}
+
+/* Maintain light text inside dark skill bubbles */
+body.light-mode .skill-cluster .cluster-title,
+body.light-mode .skill-orb .skill-orb-name {
+  color: #fff9ff;
+}
+
+body.light-mode .skill-cluster .cluster-count,
+body.light-mode .skill-orb .skill-orb-detail {
+  color: #eab4f7;
+}
+
+body.light-mode .skill-cluster .cluster-glyph {
+  color: #80cffa;
+}
+
+/* Darker headings on light backgrounds */
+body.light-mode .healthcare-values strong,
+body.light-mode .experience-editorial-heading,
+body.light-mode .leadership-headline h3,
+body.light-mode .skill-panel-heading h4 {
+  color: #201627;
+}
+
+/* Better light-mode interaction contrast */
+body.light-mode .project-filter.active,
+body.light-mode .project-filter:hover {
+  color: #24102f;
+  background: rgba(137, 58, 171, .12);
+}
+
+body.light-mode .skill-panel-close {
+  color: #201627;
+  background: rgba(127, 44, 158, .07);
+}
